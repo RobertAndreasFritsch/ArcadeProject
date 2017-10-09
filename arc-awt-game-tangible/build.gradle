@@ -1,0 +1,61 @@
+/*
+ * Copyright (c) 2017 Robert Andreas Fritsch
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+group = 'Robert Andreas Fritsch'
+version = '1.0'
+description = 'Arcade Game Classes (tangible)(AWT)'
+status = 'SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+task makeJar (type: Jar) {
+    dependsOn compileJava
+
+    baseName = 'arc-awt-game-tangible'
+    destinationDir = file ("$buildDir/libs")
+
+    into ('/') { from compileJava.outputs }
+
+    manifest {
+        attributes (
+                'Name': "${project.name}",
+                'Specification-Title': "${description}",
+                'Specification-Version': "${version}",
+                'Specification-Vendor': "Robert Andreas Fritsch",
+                'Implementation-Title': 'com.arcade.awt.game',
+                'Implementation-Version': "build-${new Date ().format ("yyyy-MM-dd")}",
+                'Implementation-Vendor': "Robert Andreas Fritsch"
+        )
+    }
+}
+
+task makeZip (type: Zip) {
+    dependsOn javadoc
+    dependsOn makeJar
+
+    baseName = 'arc-awt-game-tangible'
+    destinationDir = file ("$buildDir/zip")
+
+    into ('/') {
+        from makeJar.outputs
+        from 'LICENSE.md'
+        from 'README.md'
+    }
+
+    into ('/docs') { from javadoc.outputs }
+    into ('/src') { from sourceSets.main.allSource }
+}
+
+dependencies {
+    compile project (':arc-awt-game')
+    compile project (':arc-awt-control-tangible')
+}

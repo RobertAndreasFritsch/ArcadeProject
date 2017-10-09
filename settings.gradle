@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2017 Robert Andreas Fritsch
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+rootProject.name = 'arcade'
+
+
+include ':arc-awt-control'
+findProject (':arc-awt-control')?.name = 'arc-awt-control'
+
+include ':arc-awt-control-tangible'
+findProject (':arc-awt-control-tangible')?.name = 'arc-awt-control-tangible'
+
+include ':arc-awt-window'
+findProject(':arc-awt-window')?.name = 'arc-awt-window'
+
+include ':arc-awt-game'
+findProject(':arc-awt-game')?.name = 'arc-awt-game'
+
+include ':arc-awt-game-tangible'
+findProject (':arc-awt-game-tangible')?.name = 'arc-awt-game-tangible'
+
+/// COMING SOON
+/*
+include ':arc-fx-control'
+findProject (':arc-fx-control')?.name = 'arc-fx-control'
+
+include ':arc-fx-game'
+findProject(':arc-fx-game')?.name = 'arc-fx-game'
+
+include ':arc-fx-window'
+findProject(':arc-fx-window')?.name = 'arc-fx-window'
+*/

@@ -1,0 +1,107 @@
+/*
+ * Copyright (c) 2017 Robert Andreas Fritsch
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+group = 'Robert Andreas Fritsch'
+version = '1.0'
+description = 'Arcade Control Classes (tangible)(AWT)'
+status = 'SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+task makeJar (type: Jar) {
+    dependsOn compileJava
+
+    baseName = 'arc-awt-control-tangible'
+    destinationDir = file ("$buildDir/libs")
+
+    into ('/') { from compileJava.outputs }
+
+    manifest {
+        attributes (
+                'Name': "${project.name}",
+                'Specification-Title': "${description}",
+                'Specification-Version': "${version}",
+                'Specification-Vendor': "Robert Andreas Fritsch",
+                'Implementation-Title': 'com.arcade.awt.control',
+                'Implementation-Version': "build-${new Date ().format ("yyyy-MM-dd")}",
+                'Implementation-Vendor': "Robert Andreas Fritsch"
+        )
+    }
+}
+
+task makeTestJar (type: Jar) {
+    dependsOn compileJava
+    dependsOn processResources
+
+    appendix = 'test'
+    baseName = 'arc-awt-control-tangible'
+    destinationDir = file ("$buildDir/jar")
+
+    def annon = {
+        File src = new File ("$projectDir/src/main/resources/com/arcade/awt/control/environment.properties")
+        File tmp = new File ("$temporaryDir/prep/com/arcade/awt/control")
+        File des = new File ("$tmp/environment.properties")
+
+        Properties properties = new Properties ()
+        InputStream inputStream = new BufferedInputStream (new FileInputStream (src))
+        properties.load (inputStream)
+        inputStream.close ()
+
+        properties.setProperty ('mode', '0')
+
+        tmp.mkdirs ()
+        des.createNewFile ()
+        OutputStream outputStream = new BufferedOutputStream (new FileOutputStream (des))
+        properties.store (outputStream, '')
+        outputStream.close ()
+    }.call ()
+
+    into ('/') {
+        from "$temporaryDir/prep"
+        from (compileJava) { exclude 'environment.properties' }
+    }
+
+    manifest {
+        attributes (
+                'Name': "${project.name}",
+                'Specification-Title': "$description",
+                'Specification-Version': "$version",
+                'Specification-Vendor': "Robert Andreas Fritsch",
+                'Implementation-Title': 'com.arcade.awt.game',
+                'Implementation-Version': "build-${new Date ().format ("yyyy-MM-dd")}",
+                'Implementation-Vendor': "Robert Andreas Fritsch"
+        )
+    }
+}
+
+task makeZip (type: Zip) {
+    dependsOn javadoc
+    dependsOn makeJar
+    dependsOn makeTestJar
+
+    baseName = 'arc-awt-control-tangible'
+    destinationDir = file ("$buildDir/zip")
+
+    into ('/') {
+        from makeJar.outputs
+        from makeTestJar.outputs
+        from 'LICENSE.md'
+        from 'README.md'
+    }
+
+    into ('/docs') { from javadoc.outputs }
+    into ('/src') { from sourceSets.main.allSource }
+}
+
+dependencies {
+    compile project (':arc-awt-control')
+}

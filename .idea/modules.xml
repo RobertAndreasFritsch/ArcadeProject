@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control.iml" group="arc-awt-control" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible.iml" group="arc-awt-control-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible_main.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible_main.iml" group="arc-awt-control-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible_test.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control-tangible/arc-awt-control-tangible_test.iml" group="arc-awt-control-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control_main.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control_main.iml" group="arc-awt-control" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control_test.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-control/arc-awt-control_test.iml" group="arc-awt-control" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game.iml" group="arc-awt-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible.iml" group="arc-awt-game-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible_main.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible_main.iml" group="arc-awt-game-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible_test.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game-tangible/arc-awt-game-tangible_test.iml" group="arc-awt-game-tangible" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game_main.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game_main.iml" group="arc-awt-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game_test.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-game_test.iml" group="arc-awt-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-gme.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-game/arc-awt-gme.iml" group="arc-awt-gme" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window.iml" group="arc-awt-window" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window_main.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window_main.iml" group="arc-awt-window" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window_test.iml" filepath="$PROJECT_DIR$/.idea/modules/arc-awt-window/arc-awt-window_test.iml" group="arc-awt-window" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arcade.iml" filepath="$PROJECT_DIR$/.idea/modules/arcade.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":arc-awt-game-tangible:main" external.linked.project.path="$MODULE_DIR$/../../../arc-awt-game-tangible" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="Robert Andreas Fritsch" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../arc-awt-game-tangible/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../arc-awt-game-tangible/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../arc-awt-game-tangible/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../arc-awt-game-tangible/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="arc-awt-game_main" />
+    <orderEntry type="module" module-name="arc-awt-control-tangible_main" />
+    <orderEntry type="module" module-name="arc-awt-window_main" />
+    <orderEntry type="module" module-name="arc-awt-control_main" />
+  </component>
+</module>
